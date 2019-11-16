@@ -138,7 +138,7 @@ fars_read_years <- function(years) {
 #' @importFrom dplyr bind_rows 
 #' @importFrom dplyr group_by
 #' @importFrom dplyr summarize 
-#' @importFrom dplyr spread 
+#' @importFrom tidyr spread 
 #' 
 #' @note If one of the years specified doesn't have an associated file, and error
 #'    will be thrown.
