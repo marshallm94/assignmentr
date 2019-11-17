@@ -1,3 +1,4 @@
 ^assignmentr\.Rproj$
 ^\.Rproj\.user$
 ^\.travis\.yml$
+prepare_package.R

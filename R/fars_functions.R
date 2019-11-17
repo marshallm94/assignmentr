@@ -34,13 +34,13 @@ fars_read <- function(filename) {
 #'
 #' @examples
 #' filename_2018 <- make_filename(2018)
-#' print(filename_2018)
-#' [1] "accident_2018.csv.bz2"
 #'
 #' @export
 make_filename <- function(year) {
         year <- as.integer(year)
-        sprintf("accident_%d.csv.bz2", year)
+        filename <- sprintf("accident_%d.csv.bz2", year)
+	#filepath <- system.file('extdata', filename, package='assignmentr')
+	return(filename)
 }
 
 #' Collects the MONTH and year associated with a fatal car incident for each year
@@ -54,63 +54,13 @@ make_filename <- function(year) {
 #' 
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
+#' @importFrom dplyr %>%
 #' 
 #' @note If one of the years specified doesn't have an associated file, and error
 #'    will be thrown.
 #' 
 #' @examples
 #' years <- fars_read_years(c(2013, 2014, 2015)) 
-#' print(class(years))
-#' [1] "list"
-#' 
-#' print(years)
-#' [[1]]
-#' # A tibble: 30,202 x 2
-#'    MONTH  year
-#'    <dbl> <dbl>
-#'  1     1  2013
-#'  2     1  2013
-#'  3     1  2013
-#'  4     1  2013
-#'  5     1  2013
-#'  6     1  2013
-#'  7     1  2013
-#'  8     1  2013
-#'  9     1  2013
-#' 10     1  2013
-#' # … with 30,192 more rows
-#' 
-#' [[2]]
-#' # A tibble: 30,056 x 2
-#'    MONTH  year
-#'    <dbl> <dbl>
-#'  1     1  2014
-#'  2     1  2014
-#'  3     1  2014
-#'  4     1  2014
-#'  5     1  2014
-#'  6     1  2014
-#'  7     1  2014
-#'  8     1  2014
-#'  9     1  2014
-#' 10     1  2014
-#' # … with 30,046 more rows
-#' 
-#' [[3]]
-#' # A tibble: 32,166 x 2
-#'    MONTH  year
-#'    <dbl> <dbl>
-#'  1     1  2015
-#'  2     1  2015
-#'  3     1  2015
-#'  4     1  2015
-#'  5     1  2015
-#'  6     1  2015
-#'  7     1  2015
-#'  8     1  2015
-#'  9     1  2015
-#' 10     1  2015
-#' # … with 32,156 more rows
 #' 
 #' @export
 fars_read_years <- function(years) {
@@ -145,21 +95,6 @@ fars_read_years <- function(years) {
 #' 
 #' @examples
 #' summary_df <- fars_summarize_years(c(2013, 2014, 2015)) 
-#' # A tibble: 12 x 4
-#'    MONTH `2013` `2014` `2015`
-#'    <dbl>  <int>  <int>  <int>
-#'  1     1   2230   2168   2368
-#'  2     2   1952   1893   1968
-#'  3     3   2356   2245   2385
-#'  4     4   2300   2308   2430
-#'  5     5   2532   2596   2847
-#'  6     6   2692   2583   2765
-#'  7     7   2660   2696   2998
-#'  8     8   2899   2800   3016
-#'  9     9   2741   2618   2865
-#' 10    10   2768   2831   3019
-#' 11    11   2615   2714   2724
-#' 12    12   2457   2604   2781
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -189,7 +124,6 @@ fars_summarize_years <- function(years) {
 #' 
 #' @examples
 #' fars_map_state(42, 2015)
-#' # plot of state 42 pops up with accidents plotted as dots
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

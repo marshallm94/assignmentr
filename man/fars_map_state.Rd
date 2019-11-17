@@ -28,6 +28,5 @@ If there are no accidents to plot for the specified state.num/year combination
 }
 \examples{
 fars_map_state(42, 2015)
-# plot of state 42 pops up with accidents plotted as dots
 
 }

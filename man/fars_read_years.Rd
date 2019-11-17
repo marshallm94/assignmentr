@@ -25,56 +25,5 @@ If one of the years specified doesn't have an associated file, and error
 }
 \examples{
 years <- fars_read_years(c(2013, 2014, 2015)) 
-print(class(years))
-[1] "list"
-
-print(years)
-[[1]]
-# A tibble: 30,202 x 2
-   MONTH  year
-   <dbl> <dbl>
- 1     1  2013
- 2     1  2013
- 3     1  2013
- 4     1  2013
- 5     1  2013
- 6     1  2013
- 7     1  2013
- 8     1  2013
- 9     1  2013
-10     1  2013
-# … with 30,192 more rows
-
-[[2]]
-# A tibble: 30,056 x 2
-   MONTH  year
-   <dbl> <dbl>
- 1     1  2014
- 2     1  2014
- 3     1  2014
- 4     1  2014
- 5     1  2014
- 6     1  2014
- 7     1  2014
- 8     1  2014
- 9     1  2014
-10     1  2014
-# … with 30,046 more rows
-
-[[3]]
-# A tibble: 32,166 x 2
-   MONTH  year
-   <dbl> <dbl>
- 1     1  2015
- 2     1  2015
- 3     1  2015
- 4     1  2015
- 5     1  2015
- 6     1  2015
- 7     1  2015
- 8     1  2015
- 9     1  2015
-10     1  2015
-# … with 32,156 more rows
 
 }

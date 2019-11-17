@@ -1,6 +1,8 @@
 Package: assignmentr
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
+Author: Marshall McQuillen <dont.worry.about.it@hotmail.com>
+Maintainer: Marshall McQuillen <dont.worry.about.it@hotmail.com>
 Authors@R: 
     person(given = "Marshall",
            family = "McQuillen",
@@ -10,6 +12,12 @@ Authors@R:
 Description: This packages satisfies the requirement of creating an R package 
 	     for the Coursera course "Building R Packages", one of the courses
 	     in the "Mastering Software Development in R" specialization.
+Imports:
+	dplyr,
+	readr,
+	tidyr,
+	graphics,
+	maps,
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -1,12 +1,12 @@
 library(tidyverse)
 context('Assignment Functions')
 
-# copy files in data directory so fars_read_years() has
-# access to the files needed
-for (year in c(2013, 2014, 2015)) {
-	file_name <- paste("../../data/", make_filename(year), sep = "")
-	file.copy(file_name, make_filename(year))
-}
+# # copy files in data directory so fars_read_years() has
+# # access to the files needed
+# for (year in c(2013, 2014, 2015)) {
+# 	file_name <- paste("../../data/", make_filename(year), sep = "")
+# 	file.copy(file_name, make_filename(year))
+# }
 
 test_that("fars_read reads valid data", {
 		  test_file <- "accident_2013.csv.bz2"
@@ -63,7 +63,7 @@ test_that("fars_summarize_years returns correct data", {
 		  expect_equal(correct_data, fars_summarize_years(years))
 })
 
-# removing data files
-for (year in c(2013, 2014, 2015)) {
-	file.remove(make_filename(year))
-}
+# # removing data files
+# for (year in c(2013, 2014, 2015)) {
+# 	file.remove(make_filename(year))
+# }

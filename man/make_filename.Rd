@@ -17,7 +17,5 @@ Creates a descriptive filename based on the input year.
 }
 \examples{
 filename_2018 <- make_filename(2018)
-print(filename_2018)
-[1] "accident_2018.csv.bz2"
 
 }
