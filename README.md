@@ -7,8 +7,8 @@ Travis CI Status:
 [![Build Status](https://travis-ci.com/marshallm94/assignmentr.svg?branch=master)](https://travis-ci.com/marshallm94/assignmentr)
 <!-- badges: end -->
 
-If you woule like to download to have access to the absolutely revolutionary
-functionality, do the following:
+If you would like to download the absolutely revolutionary functionality, do
+the following:
 
 ```R
 library(devtools)
