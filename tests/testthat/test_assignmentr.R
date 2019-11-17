@@ -1,4 +1,4 @@
-library(tidyverse)
+require(tidyverse)
 context('Assignment Functions')
 
 test_that("fars_read reads valid data", {

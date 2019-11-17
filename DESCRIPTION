@@ -13,6 +13,7 @@ Description: This packages satisfies the requirement of creating an R package
 	     for the Coursera course "Building R Packages", one of the courses
 	     in the "Mastering Software Development in R" specialization.
 Imports:
+	tidyverse,
 	dplyr,
 	readr,
 	tidyr,
