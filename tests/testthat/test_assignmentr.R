@@ -2,32 +2,33 @@ library(tidyverse)
 context('Assignment Functions')
 
 test_that("fars_read reads valid data", {
-		  test_file <- system.file('extdata',
-					   filename,
-					   package='assignmentr')
-		  test_data <- readr::read_csv(test_file, progress = FALSE)
-		  expect_equal(test_data, fars_read(test_file))
+		  filename <- make_filename(2013)
+		  test_data <- readr::read_csv(filename, progress = FALSE)
+		  expect_equal(test_data, fars_read(filename))
 })
 
 
-test_that("fars_read throughs error for invalid data", {
+test_that("fars_read throws error for invalid data", {
 		  test_file <- "jason_bournes_data.csv"
 		  expect_error(fars_read(test_file))
 })
 
 test_that("make_filename creates correct filename", {
 		  test_name <- "accident_2013.csv.bz2"
-		  expect_equal(test_name, make_filename(2013))
+		  test_file <- system.file('extdata',
+					   test_name,
+					   package='assignmentr')
+		  expect_equal(test_file, make_filename(2013))
 })
 	
 test_that("fars_read_years returns list of dataframe", {
-		  df_2013 <- read_csv("accident_2013.csv.bz2") %>%
+		  df_2013 <- read_csv(make_filename(2013)) %>%
 			  mutate(year = 2013) %>%
 			  select(MONTH, year)
-		  df_2014 <- read_csv("accident_2014.csv.bz2") %>%
+		  df_2014 <- read_csv(make_filename(2014)) %>%
 			  mutate(year = 2014) %>%
 			  select(MONTH, year)
-		  df_2015 <- read_csv("accident_2015.csv.bz2") %>%
+		  df_2015 <- read_csv(make_filename(2015)) %>%
 			  mutate(year = 2015) %>%
 			  select(MONTH, year)
 
@@ -38,13 +39,13 @@ test_that("fars_read_years returns list of dataframe", {
 })
 
 test_that("fars_summarize_years returns correct data", {
-		  df_2013 <- read_csv("accident_2013.csv.bz2") %>%
+		  df_2013 <- read_csv(make_filename(2013)) %>%
 			  mutate(year = 2013) %>%
 			  select(MONTH, year)
-		  df_2014 <- read_csv("accident_2014.csv.bz2") %>%
+		  df_2014 <- read_csv(make_filename(2014)) %>%
 			  mutate(year = 2014) %>%
 			  select(MONTH, year)
-		  df_2015 <- read_csv("accident_2015.csv.bz2") %>%
+		  df_2015 <- read_csv(make_filename(2015)) %>%
 			  mutate(year = 2015) %>%
 			  select(MONTH, year)
 
@@ -57,8 +58,3 @@ test_that("fars_summarize_years returns correct data", {
 		  years <- c(2013, 2014, 2015)
 		  expect_equal(correct_data, fars_summarize_years(years))
 })
-
-# # removing data files
-# for (year in c(2013, 2014, 2015)) {
-# 	file.remove(make_filename(year))
-# }
