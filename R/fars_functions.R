@@ -13,8 +13,7 @@
 #' @note If the file doesn't exist, a message will be displayed saying so.
 #'
 #' @examples
-#' df <- fars_read("~/data/jason_bournes_data.csv")
-#' df <- fars_read("C:\\Documents\\jack_bauers_data.csv")
+#' \dontrun{df <- fars_read("path/to/some/random/file.csv")}
 #'
 #' @export
 fars_read <- function(filename) {
@@ -33,14 +32,14 @@ fars_read <- function(filename) {
 #' @return A character object that represents the filename for car fatality data.  
 #'
 #' @examples
-#' filename_2018 <- make_filename(2018)
+#' \dontrun{filename_2018 <- make_filename(2018)}
 #'
 #' @export
 make_filename <- function(year) {
         year <- as.integer(year)
         filename <- sprintf("accident_%d.csv.bz2", year)
-	#filepath <- system.file('extdata', filename, package='assignmentr')
-	return(filename)
+	filepath <- system.file('extdata', filename, package='assignmentr')
+	return(filepath)
 }
 
 #' Collects the MONTH and year associated with a fatal car incident for each year
@@ -60,7 +59,7 @@ make_filename <- function(year) {
 #'    will be thrown.
 #' 
 #' @examples
-#' years <- fars_read_years(c(2013, 2014, 2015)) 
+#' \dontrun{years <- fars_read_years(c(2013, 2014, 2015))}
 #' 
 #' @export
 fars_read_years <- function(years) {
@@ -94,7 +93,7 @@ fars_read_years <- function(years) {
 #'    will be thrown.
 #' 
 #' @examples
-#' summary_df <- fars_summarize_years(c(2013, 2014, 2015)) 
+#' \dontrun{summary_df <- fars_summarize_years(c(2013, 2014, 2015))}
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -123,7 +122,7 @@ fars_summarize_years <- function(years) {
 #'   a message will display saying so. 
 #' 
 #' @examples
-#' fars_map_state(42, 2015)
+#' \dontrun{fars_map_state(42, 2015)}
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

@@ -20,7 +20,6 @@ This function reads a CSV file into R as a tibble.
 If the file doesn't exist, a message will be displayed saying so.
 }
 \examples{
-df <- fars_read("~/data/jason_bournes_data.csv")
-df <- fars_read("C:\\\\Documents\\\\jack_bauers_data.csv")
+\dontrun{df <- fars_read("path/to/some/random/file.csv")}
 
 }

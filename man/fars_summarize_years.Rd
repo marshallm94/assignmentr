@@ -23,6 +23,6 @@ If one of the years specified doesn't have an associated file, and error
    will be thrown.
 }
 \examples{
-summary_df <- fars_summarize_years(c(2013, 2014, 2015)) 
+\dontrun{summary_df <- fars_summarize_years(c(2013, 2014, 2015))}
 
 }

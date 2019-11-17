@@ -1,2 +1,4 @@
 library(testthat)
-test_check('assignmentr')
+library(assignmentr)
+
+test_check("assignmentr")

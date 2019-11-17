@@ -27,6 +27,6 @@ If there are no accidents to plot for the specified state.num/year combination
   a message will display saying so.
 }
 \examples{
-fars_map_state(42, 2015)
+\dontrun{fars_map_state(42, 2015)}
 
 }

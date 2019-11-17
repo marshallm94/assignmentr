@@ -1,15 +1,10 @@
 library(tidyverse)
 context('Assignment Functions')
 
-# # copy files in data directory so fars_read_years() has
-# # access to the files needed
-# for (year in c(2013, 2014, 2015)) {
-# 	file_name <- paste("../../data/", make_filename(year), sep = "")
-# 	file.copy(file_name, make_filename(year))
-# }
-
 test_that("fars_read reads valid data", {
-		  test_file <- "accident_2013.csv.bz2"
+		  test_file <- system.file('extdata',
+					   filename,
+					   package='assignmentr')
 		  test_data <- readr::read_csv(test_file, progress = FALSE)
 		  expect_equal(test_data, fars_read(test_file))
 })

@@ -16,6 +16,6 @@ A character object that represents the filename for car fatality data.
 Creates a descriptive filename based on the input year.
 }
 \examples{
-filename_2018 <- make_filename(2018)
+\dontrun{filename_2018 <- make_filename(2018)}
 
 }

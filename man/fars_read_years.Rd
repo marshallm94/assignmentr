@@ -24,6 +24,6 @@ If one of the years specified doesn't have an associated file, and error
    will be thrown.
 }
 \examples{
-years <- fars_read_years(c(2013, 2014, 2015)) 
+\dontrun{years <- fars_read_years(c(2013, 2014, 2015))}
 
 }
