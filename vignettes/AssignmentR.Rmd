@@ -1,0 +1,22 @@
+---
+title: "AssignmentR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{AssignmentR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteDepends{devtools}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(devtools)
+install_github('marshallm94/assignmentr')
+library(assignmentr)
+```
